@@ -1,0 +1,267 @@
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #132238;
+  background:
+    radial-gradient(circle at top left, rgba(255, 206, 148, 0.7), transparent 32%),
+    linear-gradient(135deg, #fff8ec 0%, #eef6ff 45%, #f4fbf3 100%);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.page-shell {
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 48px;
+}
+
+.hero-panel {
+  padding: 32px;
+  border-radius: 28px;
+  background: rgba(19, 34, 56, 0.92);
+  color: #fffdf8;
+  box-shadow: 0 24px 80px rgba(19, 34, 56, 0.18);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #ffd27d;
+}
+
+.hero-panel h1 {
+  margin: 0;
+  max-width: 700px;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  line-height: 1.05;
+}
+
+.hero-copy {
+  max-width: 700px;
+  margin: 16px 0 0;
+  color: #d6e4f7;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(19, 34, 56, 0.08);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 18px 50px rgba(35, 60, 90, 0.08);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.task-form {
+  display: grid;
+  gap: 14px;
+}
+
+.task-form label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.task-form input,
+.task-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cfd8e6;
+  border-radius: 14px;
+  background: #ffffff;
+  color: #132238;
+}
+
+.task-form input:focus,
+.task-form textarea:focus {
+  outline: 2px solid #79a8ff;
+  border-color: transparent;
+}
+
+.checkbox-row {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.checkbox-row input {
+  width: auto;
+}
+
+.primary-button,
+.secondary-button,
+.danger-button,
+.ghost-button {
+  border: none;
+  border-radius: 14px;
+  padding: 11px 16px;
+  cursor: pointer;
+  transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease;
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.danger-button:hover,
+.ghost-button:hover {
+  transform: translateY(-1px);
+}
+
+.primary-button {
+  background: #132238;
+  color: #fff;
+  font-weight: 700;
+}
+
+.secondary-button {
+  background: #eaf2ff;
+  color: #133b72;
+}
+
+.danger-button {
+  background: #ffe4de;
+  color: #912d1f;
+}
+
+.ghost-button {
+  background: #f5f8fc;
+  color: #29476d;
+}
+
+.primary-button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.error-banner {
+  margin: 0 0 14px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #ffe8e3;
+  color: #8d2a1f;
+}
+
+.status-text {
+  margin: 0;
+  color: #47627f;
+}
+
+.task-list {
+  display: grid;
+  gap: 14px;
+}
+
+.task-item {
+  padding: 18px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid rgba(19, 34, 56, 0.08);
+}
+
+.task-complete {
+  opacity: 0.9;
+}
+
+.task-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.task-top h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.student-name {
+  margin: 4px 0 0;
+  color: #53708f;
+  font-weight: 600;
+}
+
+.badge {
+  height: fit-content;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.badge.done {
+  background: #def7e8;
+  color: #1e6b46;
+}
+
+.badge.pending {
+  background: #fff0cd;
+  color: #8c5f00;
+}
+
+.task-description,
+.due-date {
+  margin: 14px 0 0;
+  color: #314a68;
+}
+
+.task-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-shell {
+    width: min(100% - 20px, 1200px);
+    padding-top: 20px;
+  }
+
+  .hero-panel,
+  .card {
+    padding: 20px;
+  }
+}

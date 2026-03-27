@@ -1,0 +1,5 @@
+__pycache__
+student_tasks.db
+test_student_tasks.db
+.venv
+node_modules
