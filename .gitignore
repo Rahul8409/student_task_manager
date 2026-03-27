@@ -1,5 +1,7 @@
-__pycache__
-student_tasks.db
-test_student_tasks.db
-.venv
-node_modules
+__pycache__/
+.pytest_cache/
+.venv/
+node_modules/
+frontend/node_modules/
+*.db
+.env.example

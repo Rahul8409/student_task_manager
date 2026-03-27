@@ -1,28 +1,30 @@
 from sqlalchemy.orm import Session
 
-import models
-import schemas
+from backend.app.models.task import StudentTask
+from backend.app.schemas.task import StudentTaskCreate, StudentTaskUpdate
 
 
-def create_task(db: Session, task: schemas.StudentTaskCreate) -> models.StudentTask:
-    db_task = models.StudentTask(**task.model_dump())
+def create_task(db: Session, task: StudentTaskCreate) -> StudentTask:
+    db_task = StudentTask(**task.model_dump())
     db.add(db_task)
     db.commit()
     db.refresh(db_task)
     return db_task
 
 
-def get_tasks(db: Session) -> list[models.StudentTask]:
-    return db.query(models.StudentTask).order_by(models.StudentTask.id).all()
+def get_tasks(db: Session) -> list[StudentTask]:
+    return db.query(StudentTask).order_by(StudentTask.id).all()
 
 
-def get_task(db: Session, task_id: int) -> models.StudentTask | None:
-    return db.query(models.StudentTask).filter(models.StudentTask.id == task_id).first()
+def get_task(db: Session, task_id: int) -> StudentTask | None:
+    return db.query(StudentTask).filter(StudentTask.id == task_id).first()
 
 
 def update_task(
-    db: Session, task_id: int, task_update: schemas.StudentTaskUpdate
-) -> models.StudentTask | None:
+    db: Session,
+    task_id: int,
+    task_update: StudentTaskUpdate,
+) -> StudentTask | None:
     db_task = get_task(db, task_id)
     if not db_task:
         return None

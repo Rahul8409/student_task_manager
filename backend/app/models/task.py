@@ -1,6 +1,6 @@
 from sqlalchemy import Boolean, Column, Date, Integer, String, Text
 
-from database import Base
+from database.connection import Base
 
 
 class StudentTask(Base):
